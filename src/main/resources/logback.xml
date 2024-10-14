@@ -1,0 +1,18 @@
+<configuration>
+
+    <!-- 控制台输出格式 -->
+    <property name="CONSOLE_FORMAT" value="%d{HH:mm:ss.SSS} [%thread] %highlight(%-5level) [%cyan(%logger{56})] - %msg%n"/>
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- 输出日志格式 -->
+            <pattern>${CONSOLE_FORMAT}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置日志输出级别 -->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>

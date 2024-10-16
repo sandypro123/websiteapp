@@ -5,12 +5,11 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@EntityListeners(AuditingEntityListener.class)
+@Data
+@Table(name= "spider-cnblognews")
 public class CnBlogNews {
-    @Entity
-    @EntityListeners(AuditingEntityListener.class)
-    @Data
-    @Table(name= "spider-cnblognews")
-    public class CnblogNews {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "id")
@@ -23,6 +22,5 @@ public class CnBlogNews {
         private String content;
         @Column(name="date")
         private Date date;
-    }
 
 }

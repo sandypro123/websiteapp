@@ -8,3 +8,18 @@ spring:
     url: jdbc:mysql://54.169.143.126:3306/mysql?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT
     username: sandy
     password: 256131719xsl
+
+
+#爬虫相关信息
+cnBlog:
+  #cnBlogNews爬虫入口
+  welfareUrl: https://news.cnblogs.com
+  #名称定义
+  spiderTaskName: cnBlogNewsTask
+
+#热搜聚合相关api
+topSearchNews:
+  weiboUrl: https://weibo.com/ajax/side/hotSearch
+  zhihuUrl: https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=50&desktop=true
+  doubanUrl: https://www.douban.com/gallery/
+  shaoshupaiUrl: https://sspai.com/api/v1/article/matrix/page/get?limit=30&offset=0

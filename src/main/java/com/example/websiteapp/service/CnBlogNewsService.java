@@ -5,8 +5,7 @@ import com.example.websiteapp.entity.CnBlogNews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @Service
@@ -20,7 +19,7 @@ public class CnBlogNewsService {
         cnBlogNewsDao.save(cnBlogNews);
     }
     public int countByTitle(String title){
-        List<CnBlogNews> cnBlogNewsList=cnBlogNewsDao.findallByTitle(title);
+        List<CnBlogNews> cnBlogNewsList=cnBlogNewsDao.findAllByTitle(title);
         if(cnBlogNewsList==null){
             return 0;
         }

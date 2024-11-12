@@ -8,7 +8,7 @@ import java.util.Date;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Data
-@Table(name= "spider-cnblognews")
+@Table(name= "spider_cnblognews")
 public class CnBlogNews {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)

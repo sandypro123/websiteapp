@@ -60,10 +60,10 @@ public class AsyncScheduledTasks {
     }
 
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    @Scheduled(cron="0 0/1 * * * ?")
+    @Scheduled(cron="0 0 0/1 * * *")  // 从0点开始，每隔1小时执行
     public void scheduledTaskSpider(){
         log.info("startTask");
-        scheduledService.executeTask(this::cnBlogSpiderTask);
+        //scheduledService.executeTask(this::cnBlogSpiderTask);
         scheduledService.executeTask(this::topSearchNewsTask);
     }
 
@@ -82,7 +82,7 @@ public class AsyncScheduledTasks {
                 blogNews.setTitle(title);
                 blogNews.setUrl(url);
                 blogNews.setContent(content);
-                blogNews.setDate(date);
+                //blogNews.setDate(date);
                 cnBlogNewsService.insertOrUpdate(blogNews);
             }
             log.info("finish task:cnBlogTask");
@@ -98,7 +98,7 @@ public class AsyncScheduledTasks {
         try {
             list.addAll(getWeiboTopNews(weiboUrl,"weibo"));
             list.addAll(getZhiHuTopNews(zhihuUrl,"zhihu"));
-            list.addAll(getDoubanTopNews(doubanUrl,"douban"));
+            //list.addAll(getDoubanTopNews(doubanUrl,"douban"));
             list.addAll(getShaoShuPaiTopNews(shaoshupaiUrl,"shaoshupai"));
             topSearchNewsService.saveAll(list);
             log.info("finish task:topSearchNewsTask");

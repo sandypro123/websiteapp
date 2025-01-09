@@ -2,8 +2,8 @@ package com.example.websiteapp.entity;
 
 import lombok.Data;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -20,7 +20,7 @@ public class CnBlogNews {
         private String url;
         @Column(name="content")
         private String content;
-        @Column(name="date")
-        private Date date;
+/*        @Column(name="date")
+        private Date date;*/
 
 }

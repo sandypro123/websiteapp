@@ -1,4 +1,4 @@
-package com.example.websiteapp.thread;
+package com.example.websiteapp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
